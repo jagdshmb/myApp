@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+/* Header/Logo Title */
+.header {
+  padding: 1px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 20px;
+}
+.slideshow-container {
+  max-width: 650px;
+  position: relative;
+  margin: auto;
+  height: 250px;
+}
+
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+nav {
+  float: left;
+  width: 100%;
+  /*height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 10px;
+}
+article {
+  float: left;
+  padding: 5px;
+  width: 100%;
+  background-color: #f1f1f1;
+  /*height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+body, html {
+  height: 100%;
+}
+@import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+}
+
+.signup-form {
+  font-family: "Roboto", sans-serif;
+  width:650px;
+  margin:30px auto;
+  background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+  border-radius: 10px;
+}
+
+.form-header  {
+  background-color: #EFF0F1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+  font-size: 30px;
+  text-align:center;
+  color:#666;
+  padding:20px 0;
+  border-bottom:1px solid #cccccc;
+}
+.form-body {
+  padding:10px 40px;
+  color:#666;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-body .label-title {
+  color:#1BBA93;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.form-body .form-input {
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+
+
+
+.horizontal-group .left{
+  float:left;
+  width:49%;
+}
+
+.horizontal-group .right{
+  float:right;
+  width:49%;
+}
+
+input[type="file"] {
+ outline: none;
+ cursor:pointer;
+ font-size: 17px;
+}
+
+#ef-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#hf-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#sh-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#x-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#ea-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#rho-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#of-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#gtf-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+#sp-range-label {
+ width:15%;
+ padding:5px;
+ background-color: #1BBA93;
+ color:white;
+ border-radius: 5px;
+ font-size: 17px;
+ position: relative;
+ top:-8px;
+}
+
+::-webkit-input-placeholder {
+ color:#d9d9d9;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.wrapper {
+    text-align: center;
+}
+.btn {
+background: #0066A2;
+color: white;
+border-style: outset;
+border-color: #0066A2;
+height: 50px;
+width: 100px;
+font: bold15px arial,sans-serif;
+text-shadow: none;
+align-items: center;
+display: flex;
+justify-content: center;
+margin: 0 auto;
+}
+.button {
+    position: absolute;
+    top: 50%;
+}
+#estimateResult {
+  background-color: #cfc ;
+  padding: 10px ;
+  border: 1px solid green ;
+}
+</style>
+<title>PEROVSKITES SOLAR CELLS PREDICTION SYSTEM USING MACHINE LEARNING</title>
+</head>
+<body>
+  <div class="header">
+    <h1 style ="font-size: 25px;">SRI JAYACHAMARAJENDRA COLLEGE OF ENGINEERING</h1>
+    <h2 style ="font-size: 23px;">JSS Science and Technology University , Mysuru</h2>
+    <p style="font-size: 20px;">Electronics and Communication Engineering</p>
+  </div>
+<form class="form">
+  <div class="form-header">
+    <h1>PEROVSKITES SOLAR CELLS PREDICTION SYSTEM USING MACHINE LEARNING</h1>
+  </div>
+  <div class="form-body">
+    <div class="horizontal-group">
+
+      <div class="form-group left">
+        <label for="TolerenceFactor" class="label-title">Tolerence Factor*</label>
+        <input type="text" id="idTolerenceFactor" class="form-input" placeholder="Tolerence Factor in range 0 - 10" required="required" />
+      </div>
+      <div class="form-group right">
+        <label for="SPBondings" class="label-title">S P Bonding*</label>
+        <input type="text" id="idSPBonding" class="form-input" placeholder="S P Bonding radius in range 0 - 5 au" required="required" />
+      </div>
+    </div>
+
+    <div class="horizontal-group">
+      <div class="form-group left">
+        <label for="StructuralDensity" class="label-title">Structural Density*</label>
+        <input type="text" id="idStructuralDensity" class="form-input" placeholder="Structural Density in range 0 - 10 g/cc" required="required" />
+      </div>
+      <div class="form-group right">
+        <label for="OctahedralFactor" class="label-title">Octahedral Factor*</label>
+        <input type="text" id="idOctahedralFactor" class="form-input" placeholder="Octahedral Factor in range 0 - 5" required="required" />
+      </div>
+    </div>
+    <div class="horizontal-group">
+      <div class="form-group left">
+        <label for="ActivationEnergy" class="label-title">Activation Energy*</label>
+        <input type="text" id="idActivationEnergy" class="form-input" placeholder="Activation Energy in range 0 - 5 eV" required="required" />
+      </div>
+      <div class="form-group right">
+        <label for="Electronegativity" class="label-title">Electronegativity*</label>
+        <input type="text" id="idElectronegativity" class="form-input" placeholder="Electronegativity in range 0 - 5 pauli" required="required" />
+      </div>
+    </div>
+
+    <div class="horizontal-group">
+      <div class="form-group left">
+        <label for="SpecificHeat" class="label-title">Specific Heat*</label>
+        <input type="text" id="idSpecificHeat" class="form-input" placeholder="Specific Heat in range 0 - 10 J/g.K" required="required" />
+      </div>
+      <div class="form-group right">
+        <label for="HeatFusion" class="label-title">Heat Fusion*</label>
+        <input type="text" id="idHeatFusion" class="form-input" placeholder="Heat Fusion in range 0 - 1 eV" required="required" />
+      </div>
+    </div>
+    
+    <div class="horizontal-group">
+      <div class="form-group left">
+        <label for="VanDerWaalsRadius" class="label-title">Van Der Waals Radius*</label>
+        <input type="text" id="idVanDerWaalsRadius" class="form-input" placeholder="Van Der Waals Radius in range 0 - 5 angstorm" required="required" />
+      </div>
+      <div class="form-group right">
+        <label for="MeanAtomicRadius" class="label-title">Mean Atomic Radius*</label>
+        <input type="text" id="idMeanAtomicRadius" class="form-input" placeholder="Mean Atomic Radius in range 0 - 5 angstorm" required="required" />
+      </div>
+    </div>
+
+    <div class="horizontal-group">
+      <div class="form-group left">
+        <label for="AverageIonicRadius" class="label-title">Average Ionic Radius*</label>
+        <input type="text" id="idAverageIonicRadius" class="form-input" placeholder="Average Ionic Radius in range 0 - 5 angstorm" required="required" />
+      </div>
+      <div class="form-group right">
+        <label for="FormationEnergy" class="label-title">Formation Energy*</label>
+        <input type="text" id="idFormationEnergy" class="form-input" placeholder="Formation Energy in range -5 - 5 eV/atom" required="required" />
+      </div>
+    </div>
+    <div class="wrapper">
+      <button type="button" class="btn" onclick="onClickedEstimate()">SUBMIT</button>
+    </div>
+  </div>
+  
+</form>
+
+<result>
+  <div id="estimateResult">
+    <h2></h2>
+  </div>
+</result>
+<section>
+  <article>
+    <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>USN No.</th>
+      </tr>
+      <tr>
+        <td>Jagadeesh M B</td>
+        <td>01JST18EC043</td>
+      </tr>
+      <tr>
+        <td>Nithin S</td>
+        <td>01JST18EC062</td>
+      </tr>
+      <tr>
+        <td>Venu R</td>
+        <td>01JST18EC106</td>
+      </tr>
+      <tr>
+        <td>Ayeshwarya B</td>
+        <td>01JST19EC402</td>
+      </tr>
+    </table>
+  </article>
+</section>
+<nav>
+  <h4 style ="font-size: 18px;" >Under the guidance of</h4>
+  <h2>Shivaprasad N</h2>
+  <p1>Assistant Professor,</p1>
+  <p2>JSSSTU(SJCE), Mysuru</p2>
+</nav>
+
+<script>
+  var efrangeLabel = document.getElementById("ef-range-label");
+  var FormationEnergy = document.getElementById("idFormationEnergy");
+
+  var rhorangeLabel = document.getElementById("rho-range-label");
+  var StructuralDensity = document.getElementById("idStructuralDensity");
+
+  var ofrangeLabel = document.getElementById("of-range-label");
+  var OctahedralFactor = document.getElementById("idOctahedralFactor");
+
+  var gtfrangeLabel = document.getElementById("gtf-range-label");
+  var TolerenceFactor = document.getElementById("idTolerenceFactor");
+
+  var sprangeLabel = document.getElementById("sp-range-label");
+  var SPBonding = document.getElementById("idSPBonding");
+
+  var earangeLabel = document.getElementById("ea-range-label");
+  var ActivationEnergy = document.getElementById("idActivationEnergy");
+
+  var xrangeLabel = document.getElementById("x-range-label");
+  var Electronegativity = document.getElementById("idElectronegativity");
+
+  var shrangeLabel = document.getElementById("sh-range-label");
+  var SpecificHeat = document.getElementById("idSpecificHeat");
+
+  var hfrangeLabel = document.getElementById("hf-range-label");
+  var HeatFusion = document.getElementById("idHeatFusion");
+
+  function changeef() {
+    efrangeLabel.innerText = FormationEnergy.value + "eV";
+  }
+  
+  function changerho() {
+    rhorangeLabel.innerText = StructuralDensity.value + "g/cc";
+  }
+  
+  function changeof() {
+    ofrangeLabel.innerText = OctahedralFactor.value;
+  }
+
+  function changegtf() {
+    gtfrangeLabel.innerText = TolerenceFactor.value;
+  }
+
+  function changesp() {
+    sprangeLabel.innerText = SPBonding.value + "au";
+  }
+
+  function changeea() {
+    earangeLabel.innerText = ActivationEnergy.value + "eV";
+  }
+
+  function changex() {
+    xrangeLabel.innerText = Electronegativity.value + "pauli";
+  }
+
+  function changesh() {
+    shrangeLabel.innerText = SpecificHeat.value + "kJ/kg.K";
+  }
+
+  function changehf() {
+    hfrangeLabel.innerText = HeatFusion.value + "eV";
+  }
+
+  
+  MeanAtomicRadius = document.getElementById("idMeanAtomicRadius");
+  AverageIonicRadius = document.getElementById("idAverageIonicRadius");
+
+  function onClickedEstimate(){
+    console.log("Estimate price button clicked");
+    var FormationEnergy = document.getElementById("idFormationEnergy");
+    var StructuralDensity = document.getElementById("idStructuralDensity");
+    var OctahedralFactor = document.getElementById("idOctahedralFactor");
+    var TolerenceFactor = document.getElementById("idTolerenceFactor");
+    var ActivationEnergy = document.getElementById("idActivationEnergy");
+    var SpecificHeat = document.getElementById("idSpecificHeat");
+    var HeatFusion = document.getElementById("idHeatFusion");
+    var VanDerWaalsRadius = document.getElementById("idVanDerWaalsRadius");
+    var MeanAtomicRadius = document.getElementById("idMeanAtomicRadius");
+    var AverageIonicRadius = document.getElementById("idAverageIonicRadius");
+    var SPBonding = document.getElementById("idSPBonding");
+    var Electronegativity = document.getElementById("idElectronegativity");
+
+    var result = document.getElementById("estimateResult");
+    var url = "http://127.0.0.1:5000/predict_perovskites";
+
+    $.post(url, {
+      formationEnergy: FormationEnergy.value,
+      structuralDensity: StructuralDensity.value,
+      octahedralFactor: OctahedralFactor.value,
+      tolerenceFactor: TolerenceFactor.value,
+      activationEnergy: ActivationEnergy.value,
+      specificHeat: SpecificHeat.value,
+      heatFusion: HeatFusion.value,
+      vanDerWaalsRadius: VanDerWaalsRadius.value,
+      meanAtomicRadius: MeanAtomicRadius.value,
+      averageIonicRadius: AverageIonicRadius.value,
+      spBonding: SPBonding.value,
+      electronegativity: Electronegativity.value
+    },function(data, status){
+      console.log(data.estimated_ehull);
+      console.log(data.estimated_eg);
+      result.innerHTML = "<h2 style=\"text-align:center\"> Energy gap : " + data.estimated_ehull.toString() +"eV</h2>"+       "<h2 style=\"text-align:center\"> Energy above convex hull : "+ data.estimated_eg.toString() +"eV</h2>";
+
+      console.log(status);
+
+    }
+    )
+
+  }
+
+</script>
+
+</body>
+</html> 
